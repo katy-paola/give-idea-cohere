@@ -1,3 +1,267 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root{
+    --primary-color: #68E1FD;
+    --secondary-color: #6366F1;
+    --text-color: #101010;
+
+    --poppins: 'Poppins', sans-serif;
+    --font-base: 10px;
+
+    font-size: var(--font-base);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--poppins);
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 140px auto;
+    justify-items: center;
+    min-height: 100vh;
+}
+.header{
+    position: relative;
+    grid-column: 1 / -1;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    padding-bottom: .6rem;
+}
+.header::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 80%;
+    background-image: url('/img/wave-mobile1.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.title{
+    font-size: 1.8rem;
+    font-weight: 400;
+    max-width: 77%;
+    text-align: center;
+}
+.span-logo{
+    display: inline-block;
+    height: 18px;
+    margin-left: .4rem;
+    margin-right: .2rem;
+}
+.img-logo{
+    display: block;
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+}
+.main{
+    display: contents;
+}
+.figure{
+    grid-column: 1 / -1;
+    padding: 1.4rem 3.3rem;
+    width: 100%;
+    height: min-content;
+}
+.img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.paragraph{
+    grid-column: 1 / -1;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 1.3rem 2.9rem;
+}
+.button{
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    width: 86.5%;
+    max-height: 3.1rem;
+    margin: 1.4rem 2.1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    border: none;
+    border-radius: .7rem;
+    padding: .7rem 0;
+    background-color: var(--primary-color);
+    cursor: pointer;
+    box-shadow: 0 .4rem .4rem rgba(0, 0, 0, .25);
+}
+.button:hover{
+    box-shadow: 0 .2rem .4rem rgba(0, 0, 0, .25);
+}
+.info{
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .3rem;
+    padding: 2.2rem 6.4rem;
+}
+.logo-github{
+    width: 2rem;
+    height: 2rem;
+}
+.author{
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--text-color);
+}
+.heart{
+    width: 1rem;
+    height: 1rem;
+    margin: 0 .2rem;
+}
+a{
+    color: var(--text-color);
+}
+
+/*Estilos para la sección de idea generada*/
+
+.block{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .20);
+    z-index: 10;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    max-height: 500px;
+    background-color: white;
+    z-index: 20;
+    border: 1px solid rgba(0, 0, 0, .25);
+    padding: .9rem;
+    border: none;
+}
+
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    background-color: rgba(104, 225, 253, .13);
+    border-radius: 1rem;
+    padding: 2.5rem 2.7rem;
+    gap: 1.7rem;
+    box-shadow: 0 .4rem .4rem rgba(0, 0, 0, .25);
+}
+
+.modal-subtitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+.modal-idea{
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-color);
+    text-align: justify;
+}
+
+.close{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
+.close:hover{
+    transform: scale(1.1);
+}
+
+.deepl{
+    background-color: var(--text-color);
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    display: inline-block;
+    margin-top: 1.2rem;
+    border-radius: .7rem;
+    border: none;
+    padding: .3rem 0;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.spin-louder {
+    animation-name: spin;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+@media screen and (min-width: 375px){
+    .header::before{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-image: none;
+    }
+    .figure{
+        padding: 1.4rem 3.3rem;
+    }
+    .paragraph{
+        padding: 1.3rem 2.9rem;
+    }
+    .button{
+        margin: 1.4rem 2.1rem;
+    }
+    .info{
+        padding: 2.2rem 6.4rem;
+    }
+}
+@media screen and (min-width: 600px){
+    .title{
+        font-size: 2.2rem;
+        min-width: 90%;
+    }
+    .figure{
+        width: 35%;
+    }
+    .button{
+        width: 40%;
+    }
+}
